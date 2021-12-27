@@ -145,15 +145,10 @@ def bookroom():
         conn.commit()
 
         #data=[]
-        roomID = ""
         mycursor.execute("select RoomId from book_room where date='"+datebook+"' and time='"+t+"' and Title='"+topic+"' and SupporterName='"+supporter+"' and ObjectionName='"+opposition+"' and ZoomLink='"+url+"' and ZoomPassword='"+zoomPass+"'")
         result = mycursor.fetchall()
-        for row in result:
-            print('=============== RoomID Found ============'+row[0])
-            #data.append({'roomID' : row[0]})
-            roomID = row[0]
-        room=roomID
-        result = redirect(url_for('mod_blueprint.controller', roomID=room))
+        roomID = str(result)
+        result = redirect(url_for('mod_blueprint.controller', roomID=roomID))
         session["round"] = 0
         session["role"] = "Moderator"
     return result
