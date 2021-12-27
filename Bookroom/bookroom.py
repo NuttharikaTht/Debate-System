@@ -124,7 +124,7 @@ def bookroom():
                                             }
         # send a request with headers including
         # a token and meeting details
-        roomID = ""
+
         headers = {'authorization': 'Bearer %s' % token,
                     'content-type': 'application/json'}
         r = requests.post(
@@ -145,13 +145,14 @@ def bookroom():
         conn.commit()
 
         #data=[]
+        #roomID = ""
         mycursor.execute("select RoomId from book_room where date='"+datebook+"' and time='"+t+"' and Title='"+topic+"' and SupporterName='"+supporter+"' and ObjectionName='"+opposition+"' and ZoomLink='"+url+"' and ZoomPassword='"+zoomPass+"'")
         result = mycursor.fetchall()
         for row in result:
             #data.append({'roomID' : row[0]})
             roomID = row[0]
-        
-        result = redirect(url_for('mod_blueprint.controller', roomID=roomID))
+        room=roomID
+        result = redirect(url_for('mod_blueprint.controller', roomID=room))
         session["round"] = 0
         session["role"] = "Moderator"
     return result
