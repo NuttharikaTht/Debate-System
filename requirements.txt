@@ -1,6 +1,5 @@
 flask
 mysql.connector
-hashlib
 threading
 datetime
 pyjwt
