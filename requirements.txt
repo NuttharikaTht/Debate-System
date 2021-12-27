@@ -1,8 +1,7 @@
 flask
 mysql.connector
-threading
-datetime
 pyjwt
+gunicorn
 gevent-websocket
 Flask-SocketIO
 eventlet
