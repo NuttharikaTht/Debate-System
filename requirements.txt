@@ -1,6 +1,5 @@
 flask
 requests
-json
 Flask-SocketIO
 mysql.connector
 pyjwt
