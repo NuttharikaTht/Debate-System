@@ -46,7 +46,7 @@ def on_left(room):
     
 if __name__ == "__main__":
     #app.run(port=8080)\
-    socketio.run(app, port=int(os.environ.get('PORT', '5000')))
-    #socketio.run(app, host="https://debatesystem.herokuapp.com/")
+    #socketio.run(app, port=int(os.environ.get('PORT', '5000')))
+    socketio.run(app, host="https://debatesystem.herokuapp.com/")
     #session.init_app(app)
     #app.run()
