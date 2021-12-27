@@ -145,7 +145,7 @@ def bookroom():
         conn.commit()
 
         #data=[]
-        #roomID = ""
+        roomID = ""
         mycursor.execute("select RoomId from book_room where date='"+datebook+"' and time='"+t+"' and Title='"+topic+"' and SupporterName='"+supporter+"' and ObjectionName='"+opposition+"' and ZoomLink='"+url+"' and ZoomPassword='"+zoomPass+"'")
         result = mycursor.fetchall()
         for row in result:
