@@ -124,7 +124,7 @@ def bookroom():
                                             }
         # send a request with headers including
         # a token and meeting details
-
+        roomID = ""
         headers = {'authorization': 'Bearer %s' % token,
                     'content-type': 'application/json'}
         r = requests.post(
@@ -147,7 +147,6 @@ def bookroom():
         #data=[]
         mycursor.execute("select RoomId from book_room where date='"+datebook+"' and time='"+t+"' and Title='"+topic+"' and SupporterName='"+supporter+"' and ObjectionName='"+opposition+"' and ZoomLink='"+url+"' and ZoomPassword='"+zoomPass+"'")
         result = mycursor.fetchall()
-        #roomID = ""
         for row in result:
             #data.append({'roomID' : row[0]})
             roomID = row[0]
