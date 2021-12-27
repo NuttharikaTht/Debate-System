@@ -1,5 +1,4 @@
-from contextlib import nullcontext
-from flask import Flask, request, render_template, Blueprint, session, redirect, url_for, flash
+from flask import Flask, request, render_template, Blueprint, session, redirect, url_for
 import mysql.connector
 import hashlib
 
