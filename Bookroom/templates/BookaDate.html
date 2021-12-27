@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"dir="ltr">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Book</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('bookroom_blueprint.static', filename='assets/css/styleW.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Day - v4.7.0
+  * Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <form action="/book" method="post">
+    <div class="mb-3">
+      <label for="exampleInputToppic" class="form-label">Topic</label>
+      <input type="Topic" class="form-control" id="exampleInputToppic" aria-describedby="emailHelp" name="iptopic">
+      <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputDay" class="form-label">Day</label>
+      <input type="Day" class="form-control" id="exampleInputDay" name="ipday">
+      <label for="exampleInputMonths" class="form-label">Month</label>
+      <input type="Months" class="form-control" id="exampleInputMonths" name="ipmonth">
+      <label for="exampleInputYear" class="form-label">Year</label>
+      <input type="Year" class="form-control" id="exampleInputYear" name="ipyear">
+
+      <label for="exampleInputtime" class="form-label">Time</label>
+      <input type="time" class="form-control" id="exampleInputtime" name="iptime">
+
+     <!-- <label for="exampleInputMinute" class="form-label">Minute</label>
+      <input type="Minute" class="form-control" id="exampleInputMinute">-->
+
+      <label for="exampleInputsupporter" class="form-label">supporter</label>
+      <input type="supporter" class="form-control" value="Username Supporter" id="exampleInputsupporter" name="ipsup">
+     
+      <label for="exampleInputopposition" class="form-label">opposition</label>
+      <input type="opposition" class="form-control" value="Username opposition" id="exampleInputopposition" name="ipopp">
+     
+
+    </div>
+   
+     <!--<div class="mb-3 form-check">
+     <input type="checkbox" class="form-check-input" id="exampleCheck1">
+     <label class="form-check-label" for="exampleCheck1">Check information successfully</label>
+      </div>
+     --->
+      
+     <button type="submit"class="btn btn-primary">Submit</button>
+
+    </form>
+    
+
+    <script>
+      function myFunction() {
+        var txt;
+        if (confirm("Successfully reserved a debate room.")) {
+          txt = "You pressed OK!";
+        } else {
+          txt = "";
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+      </script>
+  </form>
+
+  <!-- Logout popup -->
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="background"></div>
+    <div class="alert_box">
+      <div class="icon">
+        <i class="fas fa-exclamation"></i>
+      </div>
+      <header>Confirm</header>
+      <p>Are you sure want to Log out?</p>
+      <div class="btns">
+        <label for="check">Yes</label>
+        <label for="check">Cancel</label>
+      </div>
+    </div>
+  </div>
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+    <h1 class="logo"><a href="/home">DEBATE</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+     
+    <nav id="navbar" class="navbar">
+        <ul>
+        <li><a class="nav-link scrollto " href="/home">Home</a></li>
+        <li><a class="nav-link scrollto" href="/about">About</a></li>
+        <li><a class="nav-link scrollto active " href="#!">Book a Date</a></li>
+        <label class="nav-link" for="check">Log Out</label>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+    <!-- Logout popup -->
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="background"></div>
+    <div class="alert_box">
+      <div class="icon">
+        <i class="fas fa-exclamation"></i>
+      </div>
+      <header>Confirm</header>
+      <p>Are you sure want to Log out?</p>
+      <form class="btns" action="/logout">
+        <button  type="submit" class="btn"><label style="background-color:#0d6efd;" for="check">Yes</label></button>
+        <label for="check">Cancle</label>
+      </form>
+    </div>
+  </div>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="600">
+    
+    
+    </div>
+</section><!-- End Hero -->
+
+<main id="main">
+   
+    
+
+    
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('bookroom_blueprint.static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('bookroom_blueprint.static', filename='assets/js/main.js') }}"></script>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer"> 
+    <div class="container">
+      <div class="copyright">
+      </div>
+
+</body>
+
+</html>

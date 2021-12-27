@@ -1,0 +1,71 @@
+@mod_blueprint.route("/vote_ongoing/<roomID>", methods=["POST"])
+def votestart_process():
+    status = check_permission()
+    result = status
+    if(status == True):
+        clicked = request.form["controller"]
+        print(clicked)
+        result = redirect(check_mode(clicked))
+    return result
+
+    @mod_blueprint.route("/vote_close", methods=["POST"])
+def go_back():
+    status = check_permission()
+    result = status
+    if(status == True):
+       
+    return result
+
+    @mod_blueprint.route("/more_round", methods=["POST"])
+def get_moreround():
+    status = check_permission()
+    result = status
+    if(status == True):
+        
+    return result
+
+
+    if(session["round"]<3 and session["role"]=="Moderator"):
+            emit('redirect',{'url': url_for('mod_blueprint.more_round')})
+        if(session["round"]<3 and session["role"]=="User"):
+            emit('redirect', {'url': url_for('vote_blueprint.votewaiting', roomID= room)}, to=room)
+        else:
+            emit('redirect', {'url': url_for('vote_blueprint.summary')}, to=room)
+
+            db = mysql.connector.connect(
+            host = "us-cdbr-east-04.cleardb.com",
+            user = "b65b46c196f747",
+            passwd = "dcc34691",
+            database = "heroku_8bbbdf5cf23f9c0"
+        )
+    mycursor = db.cursor()
+    session["role"] = "User"
+    session.pop('round', None)
+
+    #Count Support Score
+    mycursor.execute("select count(score) from allscore where RoomID='"+roomID+"'and score=1")
+    for c in mycursor:
+        SScore = c
+    print(SScore[0])
+
+    #Count Object Score
+    mycursor.execute("select count(score) from allscore where RoomID='"+roomID+"'and score=0")
+    for c in mycursor:
+        OScore = c
+    print(OScore[0])
+    list=[]
+    list.append({                
+        'SScore': str(SScore[0]),
+        'OScore': str(OScore[0])
+    })
+
+    else:
+        if (session["role"] == "Moderator") :
+            result = render_template(url_for('mod_blueprint.more_round',roomID = roomID))
+        elif (session["role"] == "User"):
+            result = render_template(url_for('vote_blueprint.votewaiting', roomID= roomID))
+        else: 
+            result = render_template(url_for('vote_blueprint.cantVote', roomID = roomID))
+
+            if(session["role"]!= "Moderator"):
+        return redirect(url_for('vote_blueprint.votewaiting', roomID = roomID))

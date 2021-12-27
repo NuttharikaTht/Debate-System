@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('debate_blueprint.static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('debate_blueprint.static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('debate_blueprint.static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('debate_blueprint.static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('debate_blueprint.static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('debate_blueprint.static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('debate_blueprint.static', filename='assets/css/style.css') }}" rel="stylesheet">
+
+  <main id="main">
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="{{ url_for('debate_blueprint.static', filename='assets/js/main.js') }}"></script>
+
+  <!-- =======================================================
+  * Template Name: Day - v4.7.0
+  * Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+  
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="#!">DEBATE</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#!">Home</a></li>
+          <li><a class="nav-link scrollto" href="/about">About</a></li>
+          <li><a class="nav-link scrollto " href="/book">Book a date</a></li>
+          <label class="nav-link" for="check">Log Out</label>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+     <!-- Logout popup -->
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="background"></div>
+    <div class="alert_box">
+      <div class="icon">
+        <i class="fas fa-exclamation"></i>
+      </div>
+      <header>Confirm</header>
+      <p>Are you sure want to Log out?</p>
+      <form class="btns" action="/logout">
+        <button  type="submit" class="btn"><label style="background-color:#0d6efd;" for="check">Yes</label></button>
+        <label for="check">Cancle</label>
+      </form>
+    </div>
+  </div>
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+      <h1>Welcome to Debate</h1>
+      <h2>Start your Debate</h2>
+      <a href="/debateRoom" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+   <!-- ======= Footer ======= -->
+   <footer id="footer"> 
+  <div class="container">
+    <div class="copyright">
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"dir="ltr">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Join a Debate</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- Vendor CSS Files -->
+  
+ <link  rel="stylesheet"  href=" {{ url_for('debate_blueprint.static', filename='assets/vendor/aos/aos.css') }}"/>
+ <link  rel="stylesheet"  href=" {{ url_for('debate_blueprint.static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}"/>
+ <link  rel="stylesheet"  href=" {{ url_for('debate_blueprint.static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}"/>
+ <link  rel="stylesheet"  href=" {{ url_for('debate_blueprint.static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}"/>
+ <link  rel="stylesheet"  href=" {{ url_for('debate_blueprint.static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}"/>
+ <link  rel="stylesheet"  href=" {{ url_for('debate_blueprint.static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}"/>
+
+  <!-- Template Main CSS File -->
+  
+  <link  rel="stylesheet"  href=" {{ url_for('debate_blueprint.static', filename='assets/css/styleDebateRoom.css') }}"/>
+  <!-- =======================================================
+  * Template Name: Day - v4.7.0
+  * Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+  
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="/home">DEBATE</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto " href="/home">Home</a></li>
+            <li><a class="nav-link scrollto active " href="#!">Debate Room</a></li>
+            <label class="nav-link" for="check">Log Out</label>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+ <!-- Logout popup -->
+ <div class="container">
+  <input type="checkbox" id="check">
+  <div class="background"></div>
+  <div class="alert_box">
+    <div class="icon">
+      <i class="fas fa-exclamation"></i>
+    </div>
+    <header>Confirm</header>
+    <p>Are you sure want to Log out?</p>
+    <div class="btns">
+      <form class="btns" action="/logout">
+        <button  type="submit" class="btn"><label style="background-color:#0d6efd;" for="check">Yes</label></button>
+        <label for="check">Cancle</label>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+  
+          <div class="section-title">
+            <!--<span>DEBATE</span>-->
+            <h2>Room debate now</h2>
+            <p>Please select a room with a discussion topic that interests you.</p>
+          </div>
+          
+          <div class="row">
+              {%for item in list%}
+              <div href="meeting.html" class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up">
+                  <div class="icon-box">
+                      <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                      <form action="/roomid/{{item.roomID}}" method="post">
+                      <h4>  <input style="font-weight: bold; font-size: 25px;" class="btn btn-outline-Danger btn-lg" type="submit" value="{{item.Title}}" name="name"></h4>
+                      </form>
+                      <p> date : {{item.date}} </p>
+                      <p> time : {{item.time}} </p>
+                      
+                  </div>
+              </div>
+              
+              {%endfor%}
+            </div>
+        </div>
+      </section><!-- End Services Section -->
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('debate_blueprint.static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+  
+  
+  
+  <!-- Template Main JS File -->
+  
+  <script src="{{ url_for('debate_blueprint.static', filename='assets/js/main.js') }}"></script>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer"> 
+    <div class="container">
+      <div class="copyright">
+      </div>
+
+</body>
+
+</html>
