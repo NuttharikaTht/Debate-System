@@ -1,6 +1,5 @@
 from logging import debug
 from flask import Flask, Blueprint, session, request, render_template, redirect, url_for
-import os
 from __init__ import create_app, socketio
 
 app = create_app(debug=True)

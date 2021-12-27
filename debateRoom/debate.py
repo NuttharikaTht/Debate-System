@@ -1,9 +1,7 @@
 import Voting.user as user
 from flask import Flask,flash, request, render_template, redirect, session, url_for, Blueprint
 import mysql.connector
-import requests
 from werkzeug.security import check_password_hash
-import json
 
 app = Flask(__name__)
 

@@ -1,5 +1,4 @@
 from contextlib import nullcontext
-import re
 from flask import Flask, request, render_template, Blueprint, session, url_for
 import mysql.connector
 import jwt
