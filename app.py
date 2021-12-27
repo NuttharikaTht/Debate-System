@@ -47,6 +47,6 @@ def on_left(room):
 if __name__ == "__main__":
     #app.run(port=8080)
 
-    socketio.run(app, port=8080)
+    socketio.run(app)
     #session.init_app(app)
     #app.run()

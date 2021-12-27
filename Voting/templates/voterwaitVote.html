@@ -39,8 +39,9 @@
       console.log("IM HERE 1")
       let room = '{{roomID}}'
       //var socket = io.connect('http://127.0.0.1:8080/');
-      var socket = io();
-      
+      //var socket = io();
+      var socket = io.connect('https://debatesystem.herokuapp.com/');
+
       socket.on('connect', function() {
         socket.send(room);
         joinRoom(room)

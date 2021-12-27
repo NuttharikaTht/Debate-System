@@ -2,8 +2,6 @@ from contextlib import nullcontext
 from flask import Flask, request, render_template, Blueprint, session, redirect, url_for, flash
 import mysql.connector
 import hashlib
-import threading
-import atexit
 
 login_blueprint = Blueprint('login_blueprint', __name__,template_folder='templates', static_folder='static', static_url_path='/static')
 
