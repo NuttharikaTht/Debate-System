@@ -44,8 +44,10 @@
       var socket = io.connect('https://'+document.domain+':'+location.port);
 
       socket.on('connect', function() {
+        
         socket.send(room);
         joinRoom(room)
+        console.log("Voter in Room")
       });
     
       socket.on('disconnect', function(){

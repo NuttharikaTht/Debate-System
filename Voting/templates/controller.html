@@ -52,6 +52,7 @@
       socket.on('connect', function() {
         socket.send(room);
         joinRoom(room);
+        console.log("Mod in Room")
       });
     
       socket.on('disconnect', function(){

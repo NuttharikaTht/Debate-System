@@ -106,10 +106,11 @@
     //var socket = io();
     //var socket = io.connect('https://debatesystem.herokuapp.com/');
     var socket = io.connect('https://'+document.domain+':'+location.port);
-    
+
     socket.on('connect', function() {
       socket.send(room);
       joinRoom(room)
+      console.log("Other in Room")
     });
   
     socket.on('disconnect', function(){
