@@ -83,7 +83,7 @@ def debateroom():
     return render_template('Debate_room.html', list = list)
 
 #ให้แสดง path ตาม roomID 
-@debate_blueprint.route('/roomid/<roomID>',methods=['POST'])
+@debate_blueprint.route('/roomid/<roomID>',methods=["GET","POST"])
 def vv(roomID):
     mydb = mysql.connector.connect(
         host = "us-cdbr-east-04.cleardb.com",

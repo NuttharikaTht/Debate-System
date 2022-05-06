@@ -44,10 +44,10 @@
     $(document).ready(function() {
     
       let room = '{{roomID}}'
-      //var socket = io.connect('http://127.0.0.1:8080/');
+      var socket = io.connect('http://127.0.0.1:8080/');
       //var socket = io();
       //var socket = io.connect('https://debatesystem.herokuapp.com/');
-      var socket = io.connect('https://'+document.domain+':'+location.port);
+      //var socket = io.connect('https://'+document.domain+':'+location.port);
 
       socket.on('connect', function() {
         socket.send(room);

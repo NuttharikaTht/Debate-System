@@ -32,6 +32,8 @@ def checkUserRoleinRoom(roomID):
         #result = redirect(url_for('vote_blueprint.cantVote',roomID=roomID))
     if(session["role"] != "User"):
         result = redirect(url_for('vote_blueprint.cantVote',roomID=roomID))
+    if(session["role"] == "Moderator"):
+        result = redirect(url_for('mod_blueprint.controller',roomID=roomID))
     return result
     
 #หน้า vote ต้องเป็น user ปกติถึงจะเข้าได้ แต่ตอนทำงานจริง ต้องมีหน้า waitingForMod เพิ่ม

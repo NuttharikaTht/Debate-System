@@ -1,4 +1,5 @@
 from logging import debug
+from socket import socketpair
 from flask import Flask, Blueprint, session, request, render_template, redirect, url_for
 from __init__ import create_app, socketio
 
@@ -44,8 +45,9 @@ def on_left(room):
     #emit('Joined', {'message': "{username} Joined Room"}, room=room, namespace='/{room}')
     
 if __name__ == "__main__":
-    #app.run(port=8080)\
+    #app.run(port=8080)
+    socketio.run(app, port=8080)
     #socketio.run(app, port=int(os.environ.get('PORT', '5000')))
-    socketio.run(app, host="https://debatesystem.herokuapp.com/")
+    #socketio.run(app, host="https://debatesystem.herokuapp.com/")
     #session.init_app(app)
     #app.run()
